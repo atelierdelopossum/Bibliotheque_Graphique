@@ -1,0 +1,37 @@
+# ============================================================
+# Bibliothèque Graphique de l'Opossum — .gitignore (racine)
+# Règle (ADR-006 / structure_dossiers.md) :
+#   Git suit : Documentation, les bibles d'univers, Technique\Workflows.
+#   Jamais les images, jamais les modèles.
+# Approche : tout ignorer, puis réautoriser explicitement.
+# ============================================================
+
+# 1. Tout ignorer à la racine
+/*
+
+# 2. Réautoriser les zones versionnées
+!/.gitignore
+!/Documentation/
+
+# Univers : uniquement les fichiers Markdown (bibles, notes de lore)
+!/Univers/
+/Univers/**/*
+!/Univers/**/
+!/Univers/**/*.md
+!/Univers/**/.gitkeep
+
+# Technique : uniquement les workflows exportés
+!/Technique/
+/Technique/*
+!/Technique/Workflows/
+
+# 3. Sécurité : même dans les zones versionnées, jamais de binaires lourds
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.psd
+*.safetensors
+*.ckpt
+*.pt
+*.gguf
